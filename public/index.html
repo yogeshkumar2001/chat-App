@@ -1,35 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realtime Chat App</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
 </head>
+
 <body>
     <div class="content">
         <div class="chat-content">
             <div class="chat-profile">
+                <div class="chat-profile-header">
+                    <i class="fas fa-moon btn-theme"></i>
+                    <h5>List of online pepoles</h5>
+                </div>
+                <div class="online-peoples">
+                    <div class="list">
+                        <ul id="user-list">
+                            <!-- <li>Coffee</li> -->
+                        </ul>
+                    </div>
+                </div>
             </div>
             <div class="chat-box">
                 <div class="chat-list">
+                    <div class="chat-header">
+                        <div class="profile">
+                             <a href="./profile.html">
+                                <div class="profile-image">
+                                    <img class="image-class" src="images/download (1).jpg">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="profile-options">
+                            <div class="name-online">
+                                <div class="name"></div>
+                                <div class="online"></div>
+                            </div>
+                            <div class="chat-option"></div>
+                            <div class="profile-option">
+                                <div class="calling">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+
+                                    <div class="video-calling">
+                                        <i class="fas fa-video"></i>
+                                    </div>
+                                <div class="chat-settings">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 
+                     -->
                 </div>
                 <div class="chat-type-box">
+                    <div class="emoji"><i class="fas fa-smile"></i>
+                    </div>
+                    <!-- <emoji-picker class="emoji-picker"></emoji-picker> -->
                     <input type="text" id="chat" placeholder="Type a message !">
                     <div class="send" id="send">
-                        <i class="fas fa-arrow-circle-up"></i>
+                        <i class="fas fa-paper-plane"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js" integrity="sha512-+l9L4lMTFNy3dEglQpprf7jQBhQsQ3/WvOnjaN/+/L4i0jOstgScV0q2TjfvRF4V+ZePMDuZYIQtg5T4MKr+MQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.0/socket.io.js"
+        integrity="sha512-+l9L4lMTFNy3dEglQpprf7jQBhQsQ3/WvOnjaN/+/L4i0jOstgScV0q2TjfvRF4V+ZePMDuZYIQtg5T4MKr+MQ=="
+        crossorigin="anonymous"></script>
     <script>
         const socket = io.connect("http://localhost:3000");
         console.log(socket);
     </script>
-    <script src="./script.js"></script>
-    <script src="./socket.js"></script>
+    <script src="script.js"></script>
+    <script src="socket.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
 </body>
+
 </html>
